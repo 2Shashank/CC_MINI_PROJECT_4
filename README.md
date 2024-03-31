@@ -1,1 +1,1 @@
-# CC_MINI_PROJECT_4
+#Building a Distributed Key-Value Store with etcd
