@@ -1,1 +1,1 @@
-#Building a Distributed Key-Value Store with etcd
+Building a Distributed Key-Value Store with etcd
