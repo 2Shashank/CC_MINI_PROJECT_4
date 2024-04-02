@@ -1,9 +1,19 @@
 import etcd3
 
-client = etcd3.client(host='localhost' , port = 2379) #creating a client pointer to access etcd database
+def get_all_keys():
+    # Connect to etcd server
+    etcd = etcd3.client()
 
-def getAllKeys(): #function creation to genarate only keys
-  for key in client.get_prefix('' , keys_only = True): 
-    print(f"Key : {key.decode()}") #printing all keys in the node/database
+    # Fetch all keys
+    keys = etcd.get_all()
 
-getAllKeys()
+    # Extract keys only
+    key_list = [key.decode('utf-8') for key, _ in keys]
+
+    # Print all keys
+    for key in key_list:
+        print(f"Key: {key}")
+
+if __name__ == "__main__":
+    get_all_keys()
+
